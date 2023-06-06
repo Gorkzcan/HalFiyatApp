@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.gorkem.halfiyatlar.ui.HomepageFragment"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/action_homepageFragment_to_searchFragment"
+            app:destination="@id/searchFragment" >
+            <argument
+                android:name="city"
+                app:argType="string"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.gorkem.halfiyatlar.ui.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" >
+            <argument
+                android:name="city"
+                app:argType="string"/>
+        </action>
+    </fragment>
+</navigation>
